@@ -1,0 +1,36 @@
+{% extends "news_list/base.html"%}
+
+{% block content %}
+    <h2>NEWS LIST</h2>
+    {% if len == 0 %}
+        <br>
+        <br>
+        <div align="center" style="border: 2px solid #aaa;">
+            <p style="margin: 10px;">No Item</p>
+        </div>
+    {% else %}
+        <br>
+        <br>
+        {% for news in all_news %}
+            <h2>{{ news.author }}</h2>
+            <h3>{{ news.title }}</h3>
+            <a href="{{ news.url }}">
+                <img src="{{ news.image_url }}" width="100%">
+            </a>
+            <p style="font-size: 0.8rem;" title="{{ news.image_url }}">
+                Image URL : <a href="{{ news.image_url }}">Click Here</a>
+            </p>
+            <p>&emsp;&emsp;{{ news.description }}</p>
+            <br>
+            <p style="font-size: 0.8rem; margin-bottom: 2px;">author : {{ news.author }}</p>
+            <p style="font-size: 0.8rem; margin-bottom: 2px;" title="{{ news.url }}">
+                Source URL : <a href="{{ news.url }}">Click Here</a>
+            </p>
+            <p style="font-size: 0.8rem;">
+                published At : {{ news.published_at }}
+            </p>
+            <div style="border-top: 2px solid #aaa;"/>
+            <br>
+        {% endfor %}
+    {% endif %}
+{% endblock content %}

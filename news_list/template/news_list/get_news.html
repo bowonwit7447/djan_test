@@ -1,0 +1,33 @@
+{% extends "news_list/base.html"%}
+
+{% block content %}
+
+    <h2>TITLE HEADING</h2>
+    <br>
+    <form method="GET">
+        {{ form }}
+        <button type="Submit" name="request">Request</button>
+        <button type="Submit" name="save">Save</button>
+    </form>
+    <br>
+    {% if message %}
+        <p>{{ message }}</p>
+    {% else %}
+        {% for news in all_news %}
+            <a href="{{ news.url }}">
+                <div style="border: 2px solid #aaa;">
+                    <div style="margin: 10px;">
+                        <h6>{{news.title}}</h6>
+                        <br>
+                        <p style="font-size: 0.8rem; margin-bottom: 2px;">author : {{ news.author }}</p>
+                        <p style="font-size: 0.8rem;">
+                            published At : {{ news.published_at }}
+                        </p>
+                    </div>
+                </div>
+            </a>
+            <br>
+        {% endfor %}
+    {% endif %}
+
+{% endblock content %}
