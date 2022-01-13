@@ -3,7 +3,7 @@ chardet==3.0.4
 Django==2.2
 get==2019.4.13
 idna==2.8
-Pillow==7.0.0
+Pillow==9.0.0
 pip==20.0.2
 post==2019.4.13
 public==2019.4.13
