@@ -14,4 +14,4 @@ requests==2.22.0
 setuptools==45.2.0
 sqlparse==0.3.0
 urllib3==1.25.8
-wheel==0.34.2
+wheel==0.38.1
